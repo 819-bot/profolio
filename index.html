@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>114-2 高三科技應用專題作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: #0b0e14;
+            color: #e0e6ed;
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow-x: hidden;
+        }
+        .cyber-font { font-family: 'Orbitron', sans-serif; }
+        
+        /* 霓虹發光效果 */
+        .neon-border {
+            border: 1px solid #00f2ff;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+        }
+        
+        /* 側邊欄與主內容區滾動條 */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #00f2ff; border-radius: 10px; }
+
+        /* 漸層背景 */
+        .glass-panel {
+            background: rgba(20, 25, 35, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .active-menu {
+            background: rgba(0, 242, 255, 0.1);
+            border-left: 4px solid #00f2ff;
+            color: #00f2ff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+
+    <header class="h-20 flex items-center px-8 glass-panel border-b border-cyan-900/50 z-20">
+        <div class="flex items-center gap-4">
+            <div class="w-3 h-3 bg-cyan-400 animate-pulse rounded-full"></div>
+            <h1 class="text-xl md:text-2xl cyber-font font-bold tracking-widest text-cyan-400">
+                114-2 高三科技應用專題作品集 - <span class="text-white">30921 陳功</span>
+            </h1>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+        
+        <nav class="w-64 glass-panel border-r border-cyan-900/30 flex flex-col p-4 gap-2 z-10">
+            <p class="text-xs text-cyan-600 mb-4 px-2 uppercase tracking-tighter">Navigation System</p>
+            <button onclick="showContent('home')" class="menu-item p-3 text-left rounded transition-all hover:bg-cyan-900/20 active-menu" id="btn-home">系統初始頁</button>
+            <button onclick="showContent('game1')" class="menu-item p-3 text-left rounded transition-all hover:bg-cyan-900/20" id="btn-game1">網頁遊戲：星際獵人</button>
+            <button onclick="showContent('3d-a')" class="menu-item p-3 text-left rounded transition-all hover:bg-cyan-900/20" id="btn-3d-a">3D 作品：揮拳的鬼</button>
+            <button onclick="showContent('reflection')" class="menu-item p-3 text-left rounded transition-all hover:bg-cyan-900/20" id="btn-reflection">學習反思與總結</button>
+        </nav>
+
+        <main class="flex-1 overflow-y-auto p-8 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+            
+            <div id="content-home" class="content-section">
+                <div data-aos="fade-up" class="max-w-3xl">
+                    <h2 class="text-4xl font-bold mb-6 cyber-font text-white">啟動科技專題存檔...</h2>
+                    <p class="text-lg leading-relaxed text-gray-400">
+                        歡迎來到 30921 陳功 的數位實驗室。這裡記錄了從 3D 建模到 AI 協作開發的完整軌跡。<br>
+                        請點擊左側選單，探索科技與創意交織的成果。
+                    </p>
+                    <div class="mt-10 p-6 border-l-2 border-cyan-500 bg-cyan-950/20">
+                        <p class="italic text-cyan-300">「科技不只是工具，是我們想像力的延伸。」</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-game1" class="content-section hidden">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-4 text-cyan-400 cyber-font">星際獵人 | Interstellar Hunter</h2>
+                    <div class="mb-6 p-4 bg-gray-900 rounded-lg border border-gray-800">
+                        <h3 class="text-sm font-bold text-gray-500 mb-2 underline cursor-pointer hover:text-cyan-400" onclick="alert('提示：這是一個完全由 AI 協作生成的遊戲架構！')">💡 創作心得 (點擊查看重點)</h3>
+                        <p>驚訝於 AI 變得如此便利，甚至能幫忙做出一款遊戲。在開發過程中，我負責邏輯引導，AI 負責程式實作，這種協作模式令人震撼。</p>
+                    </div>
+                    <iframe src="https://819-bot.github.io/game/ai_studio_code.html"></iframe>
+                </div>
+            </div>
+
+            <div id="content-3d-a" class="content-section hidden">
+                <div data-aos="zoom-in">
+                    <h2 class="text-3xl font-bold mb-4 text-cyan-400 cyber-font">3D 作品：鬼 (揮著拳頭)</h2>
+                    <div class="mb-6 p-4 bg-gray-900 rounded-lg border border-gray-800">
+                        <h3 class="text-sm font-bold text-gray-500 mb-2 underline cursor-pointer hover:text-cyan-400" onclick="alert('重點：這結合了 2D 繪圖與 3D 動態生成的技術。')">💡 創作心得 (點擊查看重點)</h3>
+                        <p>這個作品是使用 Monster Mash 完成的。從平面畫作到看著動畫動起來的瞬間，真的非常有成就感。</p>
+                    </div>
+                    <iframe src="https://819-bot.github.io/3d/index.html"></iframe>
+                </div>
+            </div>
+
+            <div id="content-reflection" class="content-section hidden">
+                <div data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-8 text-cyan-400 cyber-font underline decoration-cyan-800">Final Reflection | 學習反思與總結</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:neon-border transition-all">
+                            <h3 class="text-cyan-400 font-bold mb-4 text-lg">課程核心板塊</h3>
+                            <ul class="space-y-4 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-cyan-500">01.</span> 使用 Monster Mash 及 Polycam 製作 3D 物件</li>
+                                <li class="flex items-start gap-3"><span class="text-cyan-500">02.</span> 使用 Google AI Studio 生成網頁遊戲</li>
+                                <li class="flex items-start gap-3"><span class="text-cyan-500">03.</span> 使用 GitHub 上傳與部署網頁</li>
+                                <li class="flex items-start gap-3"><span class="text-cyan-500">04.</span> 使用 Gemini 生成學習成果網站首頁</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-cyan-900/10 border border-cyan-900/30 rounded-xl">
+                            <h3 class="text-white font-bold mb-4 text-lg">心路歷程</h3>
+                            <p class="leading-relaxed text-gray-400">
+                                製作過程真的很繁瑣，每一步都需要細心調整與除錯。
+                                <span class="block mt-4 text-cyan-200 font-medium">
+                                    「雖說看著成果很有成就感，可同樣的很累。」
+                                </span>
+                                但這份累，正是學習轉化為技能的最佳證明。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="h-8 bg-cyan-950 text-[10px] flex items-center justify-center text-cyan-700 uppercase tracking-[0.2em]">
+        System Status: Online | Data Sync: 100% | Terminal 30921-ChenGong
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 初始化動畫
+        AOS.init({
+            duration: 800,
+            once: false
+        });
+
+        // 選單切換邏輯
+        function showContent(id) {
+            // 隱藏所有區塊
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // 移除所有按鈕活性
+            document.querySelectorAll('.menu-item').forEach(btn => {
+                btn.classList.remove('active-menu');
+            });
+
+            // 顯示目標區塊
+            document.getElementById('content-' + id).classList.remove('hidden');
+            // 設定按鈕活性
+            document.getElementById('btn-' + id).classList.add('active-menu');
+            
+            // 重新觸發動畫
+            AOS.refresh();
+        }
+    </script>
+</body>
+</html>
